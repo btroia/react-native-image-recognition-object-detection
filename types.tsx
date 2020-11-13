@@ -4,14 +4,29 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Home: undefined;
+  ClassifyImage: undefined;
+  DetectObjects: undefined;
+  DetectFoods: undefined;
+  References: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type HomeParamList = {
+  HomeScreen: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type ClassifyImageParamList = {
+  ClassifyImageScreen: undefined;
+};
+
+export type DetectObjectsParamList = {
+  DetectObjectsScreen: undefined;
+};
+
+export type DetectFoodsParamList = {
+  DetectFoodScreen: undefined;
+};
+
+export type ReferencesParamList = {
+  ReferencesScreen: undefined;
 };

@@ -1,13 +1,21 @@
-import { Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import { Ionicons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { createStackNavigator } from "@react-navigation/stack";
+import * as React from "react";
 
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import Colors from "../constants/Colors";
+import useColorScheme from "../hooks/useColorScheme";
+import HomeScreen from "../screens/HomeScreen";
+import ClassifyImageScreen from "../screens/ClassifyImageScreen";
+import DetectObjectsScreen from "../screens/DetectObjectsScreen";
+import DetectFoodsScreen from "../screens/DetectFoodsScreen";
+// import TabFiveScreen from "../screens/TabFiveScreen";
+
+import {
+  BottomTabParamList,
+  // TabOneParamList,
+  // TabTwoParamList
+} from "../types";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,20 +24,47 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      initialRouteName="Home"
+      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+    >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="Home"
+        component={HomeScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="md-code" color={color} />
+          ),
+          tabBarLabel: "Intro",
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="ClassifyImage"
+        component={ClassifyImageScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="md-git-network" color={color} />
+          ),
+          tabBarLabel: "Classify Image",
+        }}
+      />
+      <BottomTab.Screen
+        name="DetectObjects"
+        component={DetectObjectsScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="md-crop" color={color} />
+          ),
+          tabBarLabel: "Detect Objects",
+        }}
+      />
+      <BottomTab.Screen
+        name="DetectFoods"
+        component={DetectFoodsScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="md-pizza" color={color} />
+          ),
+          tabBarLabel: "Detect Foods",
         }}
       />
     </BottomTab.Navigator>
@@ -42,6 +77,7 @@ function TabBarIcon(props: { name: string; color: string }) {
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
+/*
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const TabOneStack = createStackNavigator<TabOneParamList>();
@@ -71,3 +107,4 @@ function TabTwoNavigator() {
     </TabTwoStack.Navigator>
   );
 }
+*/

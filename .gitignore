@@ -1,6 +1,9 @@
+# node
 node_modules/**/*
-.expo/*
 npm-debug.*
+
+# expo
+.expo/*
 *.jks
 *.p8
 *.p12
@@ -8,6 +11,20 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+web-report/
+
+# dotenv
+.env
+
+# yarn
+.yarn/*
+yarn-error.log
+yarn.lock
+
+# Visual Studio Code
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
 
 # macOS
 .DS_Store
