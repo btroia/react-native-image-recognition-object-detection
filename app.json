@@ -5,7 +5,7 @@
     "slug": "image-object-detection",
     "githubUrl": "https://github.com/btroia/react-native-image-recognition-object-detection",
     "privacy": "public",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
