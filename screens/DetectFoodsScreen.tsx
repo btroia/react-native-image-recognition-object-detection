@@ -31,7 +31,7 @@ export default function DetectFoodsScreen() {
       if (Platform.OS !== "web") {
         const {
           status,
-        } = await ImagePicker.requestCameraRollPermissionsAsync();
+        } = await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== "granted") {
           alert("Sorry, we need camera roll permissions to make this work!");
         }
@@ -124,6 +124,9 @@ export default function DetectFoodsScreen() {
                 Predictions: {predictions ? "" : "Predicting..."}
               </Text>
             )}
+            {predictions &&
+              predictions?.length &&
+              console.log("=== Detect foods predictions: ===")}
 
             {predictions &&
               predictions.map(
@@ -131,7 +134,7 @@ export default function DetectFoodsScreen() {
                   p: { name: React.ReactNode; value: React.ReactNode },
                   index: string | number | null | undefined
                 ) => {
-                  // console.log(`${index} ${p.name}: ${p.value}`);
+                  console.log(`${index} ${p.name}: ${p.value}`);
                   return (
                     <Text key={index} style={styles.text}>
                       {p.name}: {parseFloat(p.value).toFixed(3)}

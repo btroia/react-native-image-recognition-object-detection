@@ -44,7 +44,7 @@ export default function DetectObjectsScreen() {
       if (Platform.OS !== "web") {
         const {
           status,
-        } = await ImagePicker.requestCameraRollPermissionsAsync();
+        } = await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== "granted") {
           alert("Sorry, we need camera roll permissions to make this work!");
         }
@@ -83,7 +83,8 @@ export default function DetectObjectsScreen() {
       const imageTensor = imageToTensor(rawImageData);
       const newPredictions = await model.current.detect(imageTensor);
       setPredictions(newPredictions);
-      console.log("----------- predictions: ", newPredictions);
+      console.log("=== Detect objects predictions: ===");
+      console.log(newPredictions);
     } catch (error) {
       console.log("Exception Error: ", error);
     }
@@ -107,7 +108,7 @@ export default function DetectObjectsScreen() {
 
         const source = { uri: manipResponse.uri };
         setImageToAnalyze(source);
-        console.log(manipResponse);
+        // console.log(manipResponse);
         setPredictions(null);
         await detectObjectsAsync(source);
       }

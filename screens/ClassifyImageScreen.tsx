@@ -44,7 +44,7 @@ export default function ClassifyImageScreen() {
       if (Platform.OS !== "web") {
         const {
           status,
-        } = await ImagePicker.requestCameraRollPermissionsAsync();
+        } = await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== "granted") {
           alert("Sorry, we need camera roll permissions to make this work!");
         }
@@ -160,6 +160,10 @@ export default function ClassifyImageScreen() {
                 Predictions: {predictions ? "" : "Predicting..."}
               </Text>
             )}
+            {isModelReady &&
+              predictions &&
+              predictions.length &&
+              console.log("=== Classify image predictions: ===")}
             {isModelReady &&
               predictions &&
               predictions.map((p, index) => {
