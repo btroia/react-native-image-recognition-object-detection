@@ -1,10 +1,11 @@
 {
   "expo": {
     "name": "Image Object Detection",
+    "description": "React Native / Expo image classification and object detection demos",
     "slug": "image-object-detection",
+    "githubUrl": "https://github.com/btroia/react-native-image-recognition-object-detection",
     "privacy": "public",
     "version": "1.0.0",
-    "sdkVersion": "40",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
