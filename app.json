@@ -2,8 +2,9 @@
   "expo": {
     "name": "Image Object Detection",
     "slug": "image-object-detection",
-    "privacy": "unlisted",
+    "privacy": "public",
     "version": "1.0.0",
+    "sdkVersion": "40",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
