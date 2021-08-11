@@ -4,18 +4,26 @@
     "allowUnreachableCode": true,
     "baseUrl": ".",
     "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "moduleResolution": "node",
     "noEmit": true,
     "noErrorTruncation": true,
     "noUnusedLocals": true,
     "paths": {
-      "~/*": ["./*"]
+      "~/*": [
+        "./*"
+      ]
     },
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,
     "target": "ESNext",
-    "types": ["jest"]
-  }
+    "types": [
+      "jest"
+    ]
+  },
+  "extends": "expo/tsconfig.base"
 }
